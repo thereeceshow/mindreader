@@ -10,15 +10,17 @@ const bottom = document.getElementById('bottomPage');
 const next = document.getElementById('next');
 const btmBtn = document.getElementById('btmBtn');
 const hider = document.getElementById('hider');
+const nxt = ['', 'NEXT', 'NEXT', 'NEXT', 'REVEAL',''];
+const vis = ['invisible', 'visible', 'visible', 'visible', 'visible', 'invisible'];
+const rndB = ['go','<i class="fas fa-undo-alt"></i>','<i class="fas fa-undo-alt"></i>','<i class="fas fa-undo-alt"></i>','<i class="fas fa-undo-alt"></i>','<i class="fas fa-undo-alt"></i>'];
+const symb = ['<i class="fas fa-bolt"></i>','<i class="fas fa-rocket"></i>','<i class="fas fa-horse"></i>','<i class="fab fa-napster"></i>','<i class="far fa-gem"></i>','<i class="fas fa-guitar"></i>','<i class="fas fa-heart"></i>','<i class="fas fa-chess"></i>','<i class="fas fa-coins"></i>','<i class="fas fa-poop"></i>','<i class="fas fa-fire"></i>','<i class="fas fa-umbrella-beach"></i>','<i class="fas fa-anchor"></i>','<i class="fab fa-slack-hash"></i>','<i class="fas fa-beer"></i>','<i class="fab fa-btc"></i>','<i class="fas fa-bomb"></i>','<i class="fas fa-pizza-slice"></i>','<i class="fas fa-ice-cream"></i>','<i class="fas fa-bacon"></i>','<i class="fab fa-rebel"></i>','<i class="fas fa-hat-wizard"></i>','<i class="fas fa-cat"></i>','<i class="fas fa-skull-crossbones"></i>','<i class="far fa-tired"></i>','<i class="fas fa-toilet-paper"></i>','<i class="fas fa-code"></i>','<i class="fas fa-dollar-sign"></i>','<i class="fas fa-trophy"></i>','<i class="fab fa-wordpress"></i>','<i class="fas fa-yin-yang"></i>','<i class="fas fa-user-secret"></i>','<i class="fas fa-coffee"></i>']
 let viewNum = 0;
 
 let randomArr = [];
+let views = [];
+let mid = [];
 
-let nxt = ['', 'NEXT', 'NEXT', 'NEXT', 'REVEAL',''];
-let vis = ['invisible', 'visible', 'visible', 'visible', 'visible', 'invisible'];
-let rndB = ['go','<i class="fas fa-undo-alt"></i>','<i class="fas fa-undo-alt"></i>','<i class="fas fa-undo-alt"></i>','<i class="fas fa-undo-alt"></i>','<i class="fas fa-undo-alt"></i>'];
 
-let symb = ['<i class="fas fa-bolt"></i>','<i class="fas fa-rocket"></i>','<i class="fas fa-horse"></i>','<i class="fab fa-napster"></i>','<i class="far fa-gem"></i>','<i class="fas fa-guitar"></i>','<i class="fas fa-heart"></i>','<i class="fas fa-chess"></i>','<i class="fas fa-coins"></i>','<i class="fas fa-poop"></i>','<i class="fas fa-fire"></i>','<i class="fas fa-umbrella-beach"></i>','<i class="fas fa-anchor"></i>','<i class="fab fa-slack-hash"></i>','<i class="fas fa-beer"></i>','<i class="fab fa-btc"></i>','<i class="fas fa-bomb"></i>','<i class="fas fa-pizza-slice"></i>','<i class="fas fa-ice-cream"></i>','<i class="fas fa-bacon"></i>','<i class="fab fa-rebel"></i>','<i class="fas fa-hat-wizard"></i>','<i class="fas fa-cat"></i>','<i class="fas fa-skull-crossbones"></i>','<i class="far fa-tired"></i>','<i class="fas fa-toilet-paper"></i>','<i class="fas fa-code"></i>','<i class="fas fa-dollar-sign"></i>','<i class="fas fa-trophy"></i>','<i class="fab fa-wordpress"></i>','<i class="fas fa-yin-yang"></i>','<i class="fas fa-user-secret"></i>','<i class="fas fa-coffee"></i>']
 
 
 function randSym() {
@@ -28,12 +30,12 @@ function randSym() {
     for (let i = 9; i < 100; i += 9) { 
         randomArr[i] = randomArr[0];
     }
+    views = ['I can read your mind','Pick a number from 01-99','Add both digits together to get a new number','Subtract your new number from the original number','','<center><em>' + randomArr[0] + '</em></center>'];
+    mid = ['','when you have your next number click next','Ex. 14 is 1 + 4 = 5<br>click next to proceed','Ex. 14 - 5 = 9<br>click next to proceed','Find your new number.<br>Note the symbol beside the number.','Your symbol is:<br>' + randomArr[0]]
 }
 
 randSym();
 
-let views = ['I can read your mind','Pick a number from 01-99','Add both digits together to get a new number','Subtract your new number from the original number','','<center><em>' + randomArr[0] + '</em></center>'];
-let mid = ['','when you have your next number click next','Ex. 14 is 1 + 4 = 5<br>click next to proceed','Ex. 14 - 5 = 9<br>click next to proceed','Find your new number.<br>Note the symbol beside the number.','Your symbol is:<br>' + randomArr[0]]
 
 btmBtn.onclick = function BottomBtn() {
     if (viewNum === 0) {
@@ -73,6 +75,7 @@ function Reset() {
     viewNum = 0;
     loadView();
     randSym();
+    ansKey();
 }
 
 function loadView() {
