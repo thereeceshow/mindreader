@@ -15,4 +15,3 @@ func
         nothing
         else
             gen rand symb and assign
-
