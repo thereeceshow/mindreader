@@ -10,9 +10,9 @@ let randomArr = [];
 
 let nxt = ['', 'NEXT', 'NEXT', 'NEXT', 'REVEAL',''];
 let vis = ['invisible', 'visible', 'visible', 'visible', 'visible', 'invisible'];
-let rndB = ['go','C','C','C','C','C'];
+let rndB = ['go','<i class="fas fa-undo-alt"></i>','<i class="fas fa-undo-alt"></i>','<i class="fas fa-undo-alt"></i>','<i class="fas fa-undo-alt"></i>','<i class="fas fa-undo-alt"></i>'];
 
-let symb = ['%','$','#','@','*','!','&']
+let symb = ['<i class="fas fa-bolt"></i>','<i class="fas fa-rocket"></i>','<i class="fas fa-horse"></i>','<i class="fab fa-napster"></i>','<i class="far fa-gem"></i>','<i class="fas fa-guitar"></i>','<i class="fas fa-heart"></i>','<i class="fas fa-chess"></i>','<i class="fas fa-coins"></i>','<i class="fas fa-poop"></i>','<i class="fas fa-fire"></i>','<i class="fas fa-umbrella-beach"></i>','<i class="fas fa-anchor"></i>','<i class="fab fa-slack-hash"></i>','<i class="fas fa-beer"></i>','<i class="fab fa-btc"></i>','<i class="fas fa-bomb"></i>','<i class="fas fa-pizza-slice"></i>','<i class="fas fa-ice-cream"></i>','<i class="fas fa-bacon"></i>','<i class="fab fa-rebel"></i>','<i class="fas fa-hat-wizard"></i>','<i class="fas fa-cat"></i>','<i class="fas fa-skull-crossbones"></i>','<i class="far fa-tired"></i>','<i class="fas fa-toilet-paper"></i>','<i class="fas fa-code"></i>','<i class="fas fa-dollar-sign"></i>','<i class="fas fa-trophy"></i>','<i class="fab fa-wordpress"></i>','<i class="fas fa-yin-yang"></i>','<i class="fas fa-user-secret"></i>','<i class="fas fa-coffee"></i>']
 
 
 function randSym() {
@@ -72,10 +72,10 @@ function Reset() {
 function loadView() {
     top1.innerHTML = views[viewNum];
     mid1.innerHTML = mid[viewNum];
-    next.textContent = nxt[viewNum];
+    next.innerHTML = nxt[viewNum];
     hider.className = (vis[viewNum]);
     //mid1.textContent = mid[viewNum];
-    btmBtn.textContent = rndB[viewNum];
+    btmBtn.innerHTML = rndB[viewNum];
 }
 
 loadView();
