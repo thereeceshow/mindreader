@@ -1,3 +1,9 @@
+const mainPage = document.getElementById('mainPage');
+
+let main = ('<div class="row"><div class="col-md-4 offset-md-4 col-sm-12 text-center"><div class="card"><div class="card-body"><h1 id="topPage" class="h-50 overflow-auto text-center">Text View</h1><div id="hider" class="text-center"><button type="button" class="btn btn-outline-info text-center fs-1 m-5" id="next">NEXT</button></div><p id="midPage" class="overflow-auto mt-2 text-center">When you have the number click Next</p><hr><div class="d-flex flex-row-reverse"><button class="btn btn-light rounded-circle fs-1" id="btmBtn">C</button></div></div></div></div></div>');
+
+mainPage.innerHTML = main
+
 const top1 = document.getElementById('topPage');
 const mid1 = document.getElementById('midPage');
 const bottom = document.getElementById('bottomPage');
